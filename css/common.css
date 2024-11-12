@@ -861,10 +861,8 @@ body {
   font-size: 2rem;
 }
 .wrap .contents section.section04 .inner .chart_box .radio_box .group input[type=radio]:checked + label::before {
-  background: #31214f;
-}
-.wrap .contents section.section04 .inner .chart_box .radio_box .group input[type=radio]:checked + label::after {
-  background: white;
+  background: url("../images/img_radio_ck.png") no-repeat center;
+  background-size: contain;
 }
 .wrap .contents section.section04 .inner .chart_box .radio_box .group label {
   position: relative;
@@ -886,17 +884,6 @@ body {
   border: 1px solid #dcdfe6;
   vertical-align: middle;
   margin-right: 10px;
-}
-.wrap .contents section.section04 .inner .chart_box .radio_box .group label::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 9px;
-  left: 5px;
-  background: transparent;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
 }
 .wrap .contents section.section04 .inner .chart_box .chart_view_box {
   height: calc(65% - 15px);

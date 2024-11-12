@@ -373,10 +373,7 @@
                                         @include ftSize(20);
 
                                         &::before {
-                                            background: $main-color;
-                                        }
-                                        &::after {
-                                            background: white;
+                                            @include img_radio_ck;
                                         }
                                     }
                                 }
@@ -396,15 +393,6 @@
                                         border: 1px solid #dcdfe6;
                                         vertical-align: middle;
                                         margin-right: 10px;
-                                    }
-
-                                    &::after {
-                                        @include content;
-                                        @include absolute($top: 9px, $left:5px);
-                                        background: transparent;
-                                        width: 4px;
-                                        height: 4px;
-                                        border-radius: 50%;
                                     }
                                 }
                             }

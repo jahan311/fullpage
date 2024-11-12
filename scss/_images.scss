@@ -55,6 +55,11 @@
     background-size: contain;
 }
 
+@mixin img_radio_ck {
+    @include image($name:'img_radio_ck');
+    background-size: contain;
+}
+
 
 
 
