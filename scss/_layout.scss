@@ -1,0 +1,36 @@
+@charset 'utf-8';
+
+:root {
+	--vh: 100%;
+}
+
+body {
+    overflow: hidden;
+}
+
+.wrap {
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+
+	// fullpage
+	.fp_page_wrap {
+		transition: .8s ease-in-out;
+
+		.fp_page {
+			height: calc(var(--vh, 1vh) * 100);
+			overflow: hidden;
+			overflow-y: auto;
+			box-sizing: border-box;
+			-ms-overflow-style: none;
+			scrollbar-width: none;
+
+			&::-webkit-scrollbar {
+				display: none;
+			}
+		}
+
+		footer.fp_page {
+            height: auto !important;
+		}
+	}
+}

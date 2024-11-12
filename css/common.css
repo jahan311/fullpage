@@ -1,0 +1,1409 @@
+@charset "UTF-8";
+/*-------------------------------------------------------------------------------------------------------------
+    Explain : 모두의 노래방
+    File : common.scss
+    Date : 2024.11.12
+/*------------------------------------------------------------------------------------------------------------*/
+/* images */
+/* font */
+/* layout */
+/* scroll */
+/* reset */
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  /* 1rem = 10px */
+}
+
+html {
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+      -ms-text-size-adjust: none;
+          text-size-adjust: none;
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  word-spacing: 1px;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font-size: 1rem;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "GmarketSans", system-ui, -apple-system, sans-serif;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+em {
+  font-style: normal;
+}
+
+:root {
+  --vh: 100%;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wrap {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+}
+.wrap .fp_page_wrap {
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
+}
+.wrap .fp_page_wrap .fp_page {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.wrap .fp_page_wrap .fp_page::-webkit-scrollbar {
+  display: none;
+}
+.wrap .fp_page_wrap footer.fp_page {
+  height: auto !important;
+}
+
+.wrap .header {
+  position: fixed;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #f9596c), to(#ff9ea9));
+  background: linear-gradient(90deg, #f9596c 0, #ff9ea9);
+  height: 60px;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+}
+.wrap .header .inner {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .header .inner .logo {
+  width: 300px;
+}
+.wrap .header .inner .logo a {
+  display: block;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+.wrap .header .inner nav {
+  position: relative;
+}
+.wrap .header .inner nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .header .inner nav ul li {
+  position: relative;
+}
+.wrap .header .inner nav ul li a {
+  padding: 0 20px;
+  display: block;
+  color: white;
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.wrap .header .inner nav ul li:hover a {
+  color: #303133;
+  background: #cccccc;
+}
+.wrap .header .inner nav ul li.on a {
+  color: #31214f;
+}
+.wrap .header .inner nav ul li.on a::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background: #31214f;
+}
+.wrap .navigator {
+  position: fixed;
+  top: 50%;
+  right: 17px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 999;
+}
+.wrap .navigator ul li {
+  width: 14px;
+  height: 14px;
+  margin: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: column;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .navigator ul li a {
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #333333;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.wrap .navigator ul li a:hover {
+  width: 10px;
+  height: 10px;
+}
+.wrap .navigator ul li.on a {
+  width: 12px;
+  height: 12px;
+}
+.wrap .contents .main {
+  position: relative;
+  background: black;
+}
+.wrap .contents .main .txt {
+  position: absolute;
+  top: 50%;
+  left: 300px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 10;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrap .contents .main .txt h3 {
+  font-size: 4rem;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.wrap .contents .main .txt h3 span {
+  display: block;
+  font-size: 2rem;
+}
+.wrap .contents .main .txt .desc {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 2rem;
+}
+.wrap .contents .main .txt .down p {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 2rem;
+}
+.wrap .contents .main .txt .down div {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 10px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .contents .main .txt .down div a {
+  font-size: 0;
+  display: block;
+  width: 200px;
+  aspect-ratio: 260/85;
+}
+.wrap .contents .main .txt .down div a.google {
+  background: url("../images/img_playstore.png") no-repeat center;
+  background-size: contain;
+}
+.wrap .contents .main .txt .down div a.apple {
+  background: url("../images/img_appstore.png") no-repeat center;
+  background-size: contain;
+}
+.wrap .contents .main .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+.wrap .contents .main .bg video {
+  width: 100%;
+  height: 100%;
+}
+.wrap .contents section h5 {
+  font-size: 3rem;
+  color: #31214f;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 35px;
+}
+.wrap .contents section .inner {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.wrap .contents section.section01 {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .contents section.section01 .card_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .contents section.section01 .card_box .card {
+  width: 33%;
+  max-width: 482px;
+  height: auto;
+  text-align: center;
+}
+.wrap .contents section.section01 .card_box .card .img_box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 482/356;
+  max-height: 356px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #f9596c), to(#ff9ea9));
+  background: linear-gradient(90deg, #f9596c 0, #ff9ea9);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.wrap .contents section.section01 .card_box .card .img_box::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  max-width: 384px;
+  max-height: 258px;
+  width: 80%;
+  height: 80%;
+}
+.wrap .contents section.section01 .card_box .card .img_box.control::before {
+  background: url("../images/img_control.png") no-repeat center;
+  background-size: 100%;
+}
+.wrap .contents section.section01 .card_box .card .img_box.feedback::before {
+  background: url("../images/img_feedback.png") no-repeat center;
+  background-size: 100%;
+}
+.wrap .contents section.section01 .card_box .card .img_box.live::before {
+  background: url("../images/img_live.png") no-repeat center;
+  background-size: 100%;
+}
+.wrap .contents section.section01 .card_box .card p {
+  color: #31214f;
+}
+.wrap .contents section.section01 .card_box .card p:first-of-type {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.wrap .contents section.section01 .card_box .card p:last-of-type {
+  margin-top: 5px;
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 2rem;
+}
+.wrap .contents section.section02 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #f9596c), to(#ff9ea9));
+  background: linear-gradient(90deg, #f9596c 0, #ff9ea9);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .contents section.section02 .inner {
+  max-width: 900px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .contents section.section02 .inner .txt {
+  min-width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+}
+.wrap .contents section.section02 .inner .txt p {
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.wrap .contents section.section02 .inner .txt p:first-of-type {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #31214f;
+}
+.wrap .contents section.section02 .inner .txt p:nth-of-type(2) {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 2.25rem;
+  color: white;
+}
+.wrap .contents section.section02 .inner .txt p:last-of-type {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: white;
+}
+.wrap .contents section.section02 .inner .phone {
+  width: 55%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .contents section.section02 .inner .phone div {
+  width: 100%;
+  max-width: 251px;
+  text-align: center;
+}
+.wrap .contents section.section02 .inner .phone div p {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 25px;
+}
+.wrap .contents section.section02 .inner .phone div .img {
+  aspect-ratio: 251/486;
+  max-height: 486px;
+}
+.wrap .contents section.section02 .inner .phone div.feedback .img {
+  background: url("../images/img_phone_feedback.png") no-repeat center;
+  background-size: 100%;
+}
+.wrap .contents section.section02 .inner .phone div.live .img {
+  background: url("../images/img_phone_live.png") no-repeat center;
+  background-size: 100%;
+}
+.wrap .contents section.section03 {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrap .contents section.section03 ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 20px 37px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+.wrap .contents section.section03 ul li {
+  -webkit-box-flex: 23%;
+      -ms-flex: 23%;
+          flex: 23%;
+  max-width: 23%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+}
+.wrap .contents section.section03 ul li img {
+  width: 100%;
+  aspect-ratio: 322/202;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid #ebeef5;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.wrap .contents section.section03 ul li p {
+  color: #31214f;
+}
+.wrap .contents section.section03 ul li p.tit {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 1.8rem;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+}
+.wrap .contents section.section03 ul li p.date {
+  margin-top: -7px;
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.wrap .contents section.section04 {
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrap .contents section.section04 .update {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 2rem;
+  color: #31214f;
+  margin-bottom: 15px;
+}
+.wrap .contents section.section04 .inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  max-height: 540px;
+}
+.wrap .contents section.section04 .inner .chart_box {
+  width: 35%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box {
+  height: 35%;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #ebeef5;
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 10px 40px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box .group input[type=radio] {
+  display: none;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box .group input[type=radio]:checked + label {
+  font-size: 2rem;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box .group input[type=radio]:checked + label::before {
+  background: #31214f;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box .group input[type=radio]:checked + label::after {
+  background: white;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box .group label {
+  position: relative;
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #31214f;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box .group label::before {
+  content: "";
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #dcdfe6;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.wrap .contents section.section04 .inner .chart_box .radio_box .group label::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  background: transparent;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box {
+  height: calc(65% - 15px);
+  overflow-y: auto;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box::-webkit-scrollbar-thumb {
+  background: #777777;
+  border-radius: 5px;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box::-webkit-scrollbar-track {
+  background: transparent;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box .loading {
+  display: none;
+  width: 100%;
+  background: #31214f;
+  border-radius: 10px;
+  text-align: center;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box .loading p {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 2rem;
+  color: white;
+  padding: 5px 0;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box .loading.show {
+  display: block;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box ul {
+  padding: 5px 0 0;
+  overflow: hidden;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box ul li {
+  width: 100%;
+  height: 36px;
+  background: #ff9ea9;
+  border-radius: 10px;
+  padding: 0 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 10px;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box ul li p {
+  color: black;
+  line-height: 36px;
+  white-space: nowrap;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box ul li p.rank {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box ul li p.title {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+.wrap .contents section.section04 .inner .chart_box .chart_view_box ul li p.singer {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wrap .contents section.section04 .inner .center_box {
+  width: 35%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrap .contents section.section04 .inner .center_box div {
+  width: 100%;
+  border-radius: 10px;
+  text-align: left;
+}
+.wrap .contents section.section04 .inner .center_box div:first-of-type {
+  background: white;
+  border: 1px solid #ebeef5;
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+}
+.wrap .contents section.section04 .inner .center_box div:first-of-type p {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 2rem;
+  color: #31214f;
+}
+.wrap .contents section.section04 .inner .center_box div:first-of-type p strong {
+  font-family: "GmarketSans";
+  font-weight: 700;
+}
+.wrap .contents section.section04 .inner .center_box div:last-of-type {
+  position: relative;
+  background: #31214f;
+  overflow: visible;
+  padding: 30px 20px;
+}
+.wrap .contents section.section04 .inner .center_box div:last-of-type p {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 2rem;
+  color: white;
+}
+.wrap .contents section.section04 .inner .center_box div:last-of-type::before {
+  position: absolute;
+  right: 10%;
+  bottom: 45px;
+  content: "";
+  display: inline-block;
+  background: url("../images/img_sitdown.png") no-repeat center;
+  background-size: contain;
+  width: 130px;
+  aspect-ratio: 75/121;
+}
+.wrap .contents section.section04 .inner .down_box {
+  width: 25%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #f9596c), to(#ff9ea9));
+  background: linear-gradient(90deg, #f9596c 0, #ff9ea9);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrap .contents section.section04 .inner .down_box p {
+  color: white;
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+}
+.wrap .contents section.section04 .inner .down_box div {
+  width: 100%;
+  max-width: 260px;
+  padding: 0 20px;
+}
+.wrap .contents section.section04 .inner .down_box div a {
+  font-size: 0;
+  display: block;
+  width: 100%;
+  aspect-ratio: 260/85;
+}
+.wrap .contents section.section04 .inner .down_box div a.google {
+  background: url("../images/img_playstore.png") no-repeat center;
+  background-size: contain;
+  margin-bottom: 20px;
+}
+.wrap .contents section.section04 .inner .down_box div a.apple {
+  background: url("../images/img_appstore.png") no-repeat center;
+  background-size: contain;
+}
+.wrap .contents section.section05 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #f9596c), to(#ff9ea9));
+  background: linear-gradient(90deg, #f9596c 0, #ff9ea9);
+  text-align: center;
+}
+.wrap .contents section.section05 div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrap .contents section.section05 div a {
+  font-size: 0;
+  display: block;
+}
+.wrap .contents section.section05 div a.kakao {
+  background: url("../images/img_kakao.png") no-repeat center;
+  background-size: 100%;
+  width: 19px;
+  height: 19px;
+}
+.wrap .contents section.section05 div a.blog {
+  background: url("../images/img_blog.png") no-repeat center;
+  background-size: 100%;
+  width: 22px;
+  height: 19px;
+}
+.wrap .contents section.section05 p {
+  color: white;
+}
+.wrap .contents section.section05 p:first-of-type {
+  font-family: "GmarketSans";
+  font-weight: 700;
+  font-size: 2rem;
+}
+.wrap .contents section.section05 p:last-of-type {
+  font-family: "GmarketSans";
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1400px)*/
+@media all and (min-width: 1024px) and (max-width: 1400px) {
+  :root {
+    font-size: 60%;
+  }
+  .wrap .contents section .inner {
+    max-width: 900px;
+  }
+  .wrap .contents section.section03 ul {
+    gap: 10px 24px;
+  }
+}
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    font-size: 50%;
+    line-height: 1.2;
+  }
+  .wrap .contents .main .txt {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .wrap .contents section .inner {
+    max-width: 600px;
+  }
+  .wrap .contents section.section02 .inner {
+    max-width: 600px;
+  }
+  .wrap .contents section.section03 ul {
+    gap: 10px 16px;
+  }
+  .wrap .contents section.section04 .center_box div:last-of-type::before {
+    max-width: 100px;
+    bottom: 60px !important;
+  }
+  .wrap .contents section.section04 .down_box p {
+    font-size: 2.4rem !important;
+  }
+}
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width: 480px) and (max-width: 767px) {
+  :root {
+    font-size: 45%;
+    line-height: 1.2;
+    word-break: keep-all;
+  }
+  .wrap .header .inner .logo {
+    width: 150px;
+  }
+  .wrap .header .inner .logo a {
+    font-size: 2.4rem;
+  }
+  .wrap .header .inner nav ul li a {
+    font-size: 1.4rem !important;
+  }
+  .wrap .contents .main .txt {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .wrap .contents .main .txt .down div {
+    width: 200px;
+  }
+  .wrap .contents section .inner {
+    max-width: 380px;
+  }
+  .wrap .contents section.section01 .inner .card_box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .wrap .contents section.section01 .inner .card_box .card {
+    width: 50%;
+  }
+  .wrap .contents section.section02 .inner {
+    max-width: 380px;
+  }
+  .wrap .contents section.section03 ul {
+    gap: 10px 22px;
+  }
+  .wrap .contents section.section03 ul li {
+    -webkit-box-flex: 47%;
+        -ms-flex: 47%;
+            flex: 47%;
+    max-width: 47%;
+  }
+  .wrap .contents section.section04 .inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .wrap .contents section.section04 .inner .chart_box {
+    width: 60%;
+    height: 70%;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box {
+    overflow-y: auto;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box::-webkit-scrollbar-thumb {
+    background: #777777;
+    border-radius: 5px;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box label {
+    font-size: 1.2rem !important;
+  }
+  .wrap .contents section.section04 .inner .chart_box .chart_view_box li p {
+    font-size: 1rem !important;
+  }
+  .wrap .contents section.section04 .inner .center_box {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 18%;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .wrap .contents section.section04 .inner .center_box div {
+    width: 45%;
+  }
+  .wrap .contents section.section04 .inner .center_box div:last-of-type::before {
+    max-width: 60px;
+    bottom: 75px !important;
+  }
+  .wrap .contents section.section04 .inner .down_box {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 35%;
+    height: 70%;
+  }
+  .wrap .contents section.section04 .inner .down_box p {
+    font-size: 2.4rem !important;
+  }
+}
+/* 모바일 세로 (해상도 ~ 479px)*/
+@media all and (max-width: 479px) {
+  :root {
+    font-size: 42%;
+    line-height: 1.1;
+    word-break: keep-all;
+  }
+  .wrap .header .inner .logo {
+    width: 120px;
+  }
+  .wrap .header .inner .logo a {
+    font-size: 2rem;
+  }
+  .wrap .header .inner nav ul li a {
+    font-size: 1rem !important;
+    padding: 0 14px;
+  }
+  .wrap .contents .main .txt {
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .wrap .contents .main .txt .down div {
+    width: 200px;
+  }
+  .wrap .contents section .inner {
+    max-width: 300px;
+    max-height: 450px;
+  }
+  .wrap .contents section.section01 .inner .card_box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .wrap .contents section.section01 .inner .card_box .card {
+    width: 46%;
+  }
+  .wrap .contents section.section01 .inner .card_box .card .img_box {
+    max-height: 80px;
+    margin-bottom: 5px;
+  }
+  .wrap .contents section.section02 .inner {
+    max-width: 300px;
+  }
+  .wrap .contents section.section03 ul {
+    gap: 10px 12px;
+  }
+  .wrap .contents section.section03 ul li {
+    -webkit-box-flex: 47%;
+        -ms-flex: 47%;
+            flex: 47%;
+    max-width: 47%;
+  }
+  .wrap .contents section.section04 .inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-height: 400px;
+  }
+  .wrap .contents section.section04 .inner .chart_box {
+    width: 60%;
+    height: 70%;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box {
+    overflow-y: auto;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box::-webkit-scrollbar-thumb {
+    background: #777777;
+    border-radius: 5px;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .wrap .contents section.section04 .inner .chart_box .radio_box label {
+    font-size: 1.2rem !important;
+  }
+  .wrap .contents section.section04 .inner .chart_box .chart_view_box li p {
+    font-size: 1rem !important;
+  }
+  .wrap .contents section.section04 .inner .center_box {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 18%;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .wrap .contents section.section04 .inner .center_box div {
+    width: 45%;
+  }
+  .wrap .contents section.section04 .inner .center_box div:last-of-type::before {
+    max-width: 60px;
+    bottom: 75px !important;
+  }
+  .wrap .contents section.section04 .inner .down_box {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 35%;
+    height: 70%;
+  }
+  .wrap .contents section.section04 .inner .down_box p {
+    font-size: 2.4rem !important;
+  }
+}/*# sourceMappingURL=common.css.map */

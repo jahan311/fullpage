@@ -1,0 +1,61 @@
+@charset 'utf-8';
+
+/* images */
+@mixin image($name, $path: "../images/", $format:"png", $bgXY:center, $bg:'',) {
+    background: #{$bg} url("#{$path}#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+@mixin img_playstore {
+    @include image($name:'img_playstore');
+    background-size: contain;
+}
+
+@mixin img_appstore {
+    @include image($name:'img_appstore');
+    background-size: contain;
+}
+
+@mixin img_control {
+    @include image($name:'img_control');
+    background-size: 100%;
+}
+
+@mixin img_feedback {
+    @include image($name:'img_feedback');
+    background-size: 100%;
+}
+
+@mixin img_live {
+    @include image($name:'img_live');
+    background-size: 100%;
+}
+
+@mixin img_phone_feedback {
+    @include image($name:'img_phone_feedback');
+    background-size: 100%;
+}
+
+@mixin img_phone_live {
+    @include image($name:'img_phone_live');
+    background-size: 100%;
+}
+
+@mixin img_kakao {
+    @include image($name:'img_kakao');
+    background-size: 100%;
+}
+
+@mixin img_blog {
+    @include image($name:'img_blog');
+    background-size: 100%;
+}
+
+@mixin img_sitdown {
+    @include image($name:'img_sitdown');
+    background-size: contain;
+}
+
+
+
+
+

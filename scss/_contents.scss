@@ -1,0 +1,585 @@
+.wrap {
+    .header {
+        position: fixed;
+        width: 100%;
+        background: $gradient-bg;
+        height: 60px;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+
+        .inner {
+            width: 100%;
+            height: 100%;
+            @include flex(center, flex-start);
+
+            .logo {
+                width: 300px;
+                a {
+                    display: block;
+                    width: 100%;
+                    color: white;
+                    text-align: center;
+                    @include ftSize(30);
+                }
+            }
+            
+            nav {
+                position: relative;
+                ul {
+                    @include flex(center, flex-start);
+                    li {
+                        position: relative;
+                        a {
+                            padding: 0 20px;
+                            display: block;
+                            color: white;
+                            @include ftMedium;
+                            @include ftSize(18);
+                            line-height: 60px;
+                            transition: all 0.3s
+                        }
+                        &:hover {
+                            a {
+                                color: $ft-hover-color;
+                                background: $hover-bg;
+                            }
+                        }
+                        &.on {
+                            a {
+                                color: $main-color;
+                                &::before {
+                                    @include content;
+                                    @include centerX($bottom:0);
+                                    width: 100%;
+                                    height: 3px;
+                                    background: $main-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navigator {
+        @include centerY(fixed, $right: 17px);
+        z-index: 999;
+        ul {
+            li {
+                width: 14px;
+                height: 14px;
+                margin: 7px;
+                @include flex(center, center, column);
+                a {
+                    display: block;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 50%;
+                    background: #333333;
+                    transition: all 0.5s;
+
+                    &:hover {
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+
+                &.on {
+                    a {
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .contents {
+        .main {
+            position: relative;
+            background: black;
+            .txt {
+                @include centerY($left:300px);
+                z-index: 10;
+                height: fit-content;
+                color: white;
+                @include flex(flex-start, center, 30px, column);
+                h3 {
+                    @include ftSize(40);
+                    text-shadow: $text-shadow;
+                    span {
+                        display: block;
+                        @include ftSize(20);
+                    }
+                }
+                .desc {
+                    @include ftMedium;
+                    @include ftSize(20);
+                }
+                .down {
+                    p {
+                        @include ftBold;
+                        @include ftSize(20);
+                    }
+                    div {
+                        margin-top: 10px;
+                        @include flex(center, flex-start, 10px);
+                        a {
+                            font-size: 0;
+                            display: block;
+                            width: 200px;
+                            aspect-ratio: 260/85;
+                            &.google {
+                                @include img_playstore;
+                            }
+                            &.apple {
+                                @include img_appstore;
+                            }
+                        }
+                    }
+                }
+            }
+            .bg {
+                @include absolute(0,0);
+                width: 100%;
+                height: 100%;
+                filter: blur(10px);
+                video {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        section {
+            h5 {
+                @include ftSize(30);
+                color: $main-color;
+                text-shadow: $text-shadow;
+                margin-bottom: 35px;
+            }
+                
+            .inner {
+                max-width: 1400px;
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            &.section01 {
+                background: white;
+                @include flex(center, center);
+    
+                .card_box {
+                    @include flex(flex-start, center, 30px);
+
+                    .card {
+                        width: 33%;
+                        max-width: 482px;
+                        height: auto;
+                        text-align: center;
+
+                        .img_box {
+                            position: relative;
+                            width: 100%;
+                            aspect-ratio: 482/356;
+                            max-height: 356px;
+                            background: $gradient-bg;
+                            border-radius: 10px;
+                            margin-bottom: 15px;
+                            &::before {
+                                @include content;
+                                @include centerXY;
+                                max-width: 384px;
+                                max-height: 258px;
+                                width: 80%;
+                                height: 80%;
+                            }
+                            &.control {
+                                &::before {
+                                    @include img_control;
+                                }
+                            }
+                            &.feedback {
+                                &::before {
+                                    @include img_feedback;
+                                }
+                            }
+                            &.live {
+                                &::before {
+                                    @include img_live;
+                                }
+                            }
+                        }
+
+                        p {
+                            color: $main-color;
+                            &:first-of-type {
+                                @include ftBold;
+                                @include ftSize(25);
+                            }
+                            &:last-of-type {
+                                margin-top: 5px;
+                                @include ftMedium;
+                                @include ftSize(20);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.section02 {
+                background: $gradient-bg;
+                @include flex(center, center);
+                .inner {
+                    max-width: 900px;
+                    @include flex(center, space-between);
+                    .txt {
+                        min-width: 40%;
+                        @include flex(flex-start, center, 30px, column);
+                        text-align: left;
+                        p {
+                            text-shadow: $text-shadow;
+                            &:first-of-type {
+                                @include ftBold;
+                                @include ftSize(25);
+                                color: $main-color;
+                            }
+                            &:nth-of-type(2) {
+                                @include ftMedium;
+                                @include ftSize(22.5);
+                                color: white;
+                            }
+                            &:last-of-type {
+                                @include ftBold;
+                                @include ftSize(25);
+                                color: white;
+                            }
+                        }
+                    }
+    
+                    .phone {
+                        width: 55%;
+                        @include flex(center, center);
+                        div {
+                            width: 100%;
+                            max-width: 251px;
+                            text-align: center;
+                            p {
+                                @include ftBold;
+                                @include ftSize(25);
+                                color: white;
+                                text-shadow: $text-shadow;
+                                margin-bottom: 25px;
+                            }
+    
+                            .img {
+                                aspect-ratio: 251/486;
+                                max-height: 486px;
+                            }
+                            &.feedback {
+                                .img {
+                                    @include img_phone_feedback;
+                                }
+                            }
+                            &.live {
+                                .img {
+                                    @include img_phone_live;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.section03 {
+                background: white;
+                @include flex(center, center, 0, column);
+
+                ul {
+                    @include flex(flex-start, flex-start, 20px 37px);
+                    flex-wrap: wrap;
+                    width: 100%;
+
+                    li {
+                        flex: 23%;
+                        max-width: 23%;
+                        text-align: center;
+                        @include flex(center, center, 15px, column);
+                        cursor: pointer;
+
+                        img {
+                            width: 100%;
+                            aspect-ratio: 322/202;
+                            object-fit: cover;
+                            border: 1px solid #ebeef5;
+                            border-radius: 4px;
+                            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+                        }
+
+                        p {
+                            color: $main-color;
+                            &.tit {
+                                @include ftBold;
+                                @include ftSize(18);
+                                @include ellipsis(2);
+                                word-break: keep-all;
+                            }
+                            &.date {
+                                margin-top: -7px;
+                                @include ftMedium;
+                                @include ftSize(15);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.section04 {
+                background: white;
+                @include flex(center, center, 0, column);
+
+                .update {
+                    @include ftMedium;
+                    @include ftSize(20);
+                    color: $main-color;
+                    margin-bottom: 15px;
+                }
+
+                .inner {
+                    @include flex(center, space-between);
+                    max-height: 540px;
+                    .chart_box {
+                        width: 35%;
+                        height: 100%;
+                        @include flex(space-between, center, 15px, column);
+                        .radio_box {
+                            height: 35%;
+                            background: white;
+                            border-radius: 10px;
+                            border: 1px solid #ebeef5;
+                            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+                            padding: rem(20);
+                            @include flex(center, flex-start, 10px 40px);
+                            flex-wrap: wrap;
+
+                            .group {
+                                input[type=radio] {
+                                    display: none;
+
+                                    &:checked + label {
+                                        @include ftSize(20);
+
+                                        &::before {
+                                            background: $main-color;
+                                        }
+                                        &::after {
+                                            background: white;
+                                        }
+                                    }
+                                }
+                                label {
+                                    position: relative;
+                                    @include ftMedium;
+                                    @include ftSize(14);
+                                    color: $main-color;
+                                    transition: all 0.3s;
+                                    cursor: pointer;
+                                    &::before {
+                                        @include content;
+                                        height: 14px;
+                                        width: 14px;
+                                        border-radius: 50%;
+                                        background-color: #fff;
+                                        border: 1px solid #dcdfe6;
+                                        vertical-align: middle;
+                                        margin-right: 10px;
+                                    }
+
+                                    &::after {
+                                        @include content;
+                                        @include absolute($top: 9px, $left:5px);
+                                        background: transparent;
+                                        width: 4px;
+                                        height: 4px;
+                                        border-radius: 50%;
+                                    }
+                                }
+                            }
+                        }
+                        .chart_view_box {
+                            height: calc(65% - 15px);
+                            @include scroll;
+
+                            .loading {
+                                display: none;
+                                width: 100%;
+                                background: $main-color;
+                                border-radius: 10px;
+                                text-align: center;
+                                p {
+                                    @include ftMedium;
+                                    @include ftSize(20);
+                                    color: white;
+                                    padding: 5px 0;
+                                }
+                                &.show {
+                                    display: block;
+                                }
+                            }
+                            
+                            ul {
+                                padding: 5px 0 0;
+                                overflow: hidden;
+                                li {
+                                    width: 100%;
+                                    height: 36px;
+                                    background: #ff9ea9;
+                                    border-radius: 10px;
+                                    padding: 0 5px;
+                                    @include flex(center, flex-start);
+                                    margin-bottom: 10px;
+
+                                    p {
+                                        color: black;
+                                        line-height: 36px;
+                                        white-space: nowrap;
+                                        &.rank {
+                                            @include ftBold;
+                                            @include ftSize(14);
+                                            margin-right: 10px;
+                                        }
+                                        &.title {
+                                            @include ftBold;
+                                            @include ftSize(14);
+                                            margin-right: 10px;
+                                        }
+                                        &.singer {
+                                            @include ftMedium;
+                                            @include ftSize(10);
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .center_box {
+                        width: 35%;
+                        height: 100%;
+                        @include flex(center, space-between, 0, column);
+
+                        div {
+                            width: 100%;
+                            border-radius: 10px;
+                            text-align: left;
+                            &:first-of-type {
+                                background: white;
+                                border: 1px solid #ebeef5;
+                                box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+                                padding: rem(25) rem(20);
+                                p {
+                                    @include ftMedium;
+                                    @include ftSize(20);
+                                    color: $main-color;
+                                    
+                                    strong {
+                                        @include ftBold;
+                                    }
+                                }
+                            }
+                            &:last-of-type {
+                                position: relative;
+                                background: $main-color;
+                                overflow: visible;
+                                padding: 30px 20px;
+                                p {
+                                    @include ftMedium;
+                                    @include ftSize(20);
+                                    color: white;
+                                }
+                                &::before {
+                                    @include absolute($bottom:45px,$right: 10%);
+                                    @include content;
+                                    @include img_sitdown;
+                                    width: 130px;
+                                    aspect-ratio: 75/121;
+                                }
+                            }
+                        }
+                    }
+
+                    .down_box {
+                        width: 25%;
+                        height: 100%;
+                        background: $gradient-bg;
+                        border-radius: 10px;
+                        @include flex(center, center, 30px, column);
+                        p {
+                            color: white;
+                            @include ftBold;
+                            @include ftSize(30);
+                            text-align: center;
+                        }
+                        div {
+                            width: 100%;
+                            max-width: 260px;
+                            padding: 0 20px;
+                            a {
+                                font-size: 0;
+                                display: block;
+                                width: 100%;
+                                aspect-ratio: 260/85;
+                                &.google {
+                                    @include img_playstore;
+                                    margin-bottom: 20px;
+                                }
+                                &.apple {
+                                    @include img_appstore;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.section05 {
+                @include flex(center, center, 5px, column);
+                background: $gradient-bg;
+                text-align: center;
+                div {
+                    @include flex(center, center, 10px);
+                    a {
+                        font-size: 0;
+                        display: block;
+                        &.kakao {
+                            @include img_kakao;
+                            width: 19px;
+                            height: 19px;
+                        }
+                        &.blog {
+                            @include img_blog;
+                            width: 22px;
+                            height: 19px;
+                        }
+                    }
+                }
+                p {
+                    color: white;
+                    &:first-of-type {
+                        @include ftBold;
+                        @include ftSize(20);
+                    }
+                    &:last-of-type {
+                        @include ftMedium;
+                        @include ftSize(10);
+                    }
+                }
+            }
+        }
+    }
+}

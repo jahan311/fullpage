@@ -1,0 +1,332 @@
+@charset 'utf-8';
+
+/* 노트북 & 테블릿 가로 (해상도 1024px ~ 1400px)*/
+@media all and (min-width:1024px) and (max-width:1400px) {
+    :root {
+        font-size: 60%;
+    }
+    .wrap {
+        .contents {
+            section {
+                .inner {
+                    max-width: 900px;
+                }
+
+                &.section03 {
+                    ul {
+                        gap: 10px 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 테블릿 가로 (해상도 768px ~ 1023px)*/
+@media all and (min-width:768px) and (max-width:1023px) {
+    :root {
+        font-size: 50%;
+        line-height: 1.2;
+    }
+    .wrap {
+        .contents {
+            .main {
+                .txt {
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            section {
+                .inner {
+                    max-width: 600px;
+                }
+
+                &.section02 {
+                    .inner {
+                        max-width: 600px;
+                    }
+                }
+
+                &.section03 {
+                    ul {
+                        gap: 10px 16px;
+                    }
+                }
+
+                &.section04 {
+                    .center_box {
+                        div {
+                            &:last-of-type {
+                                &::before {
+                                    max-width: 100px;
+                                    bottom: 60px !important;
+                                }
+                            }
+                        }
+                    }
+                    .down_box {
+                        p {
+                            font-size: 2.4rem !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* 모바일 가로 & 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width:480px) and (max-width:767px) {
+    :root {
+        font-size: 45%;
+        line-height: 1.2;
+        word-break: keep-all;
+    }
+    .wrap {
+        .header {
+            .inner {
+                .logo {
+                    width: 150px;
+                    a {
+                        font-size: 2.4rem;
+                    }
+                }
+
+                nav {
+                    ul {
+                        li {
+                            a {
+                                font-size: 1.4rem !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contents {
+            .main {
+                .txt {
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    .down {
+                        div {
+                            width: 200px;
+                        }
+                    }
+                }
+            }
+            section {
+                .inner {
+                    max-width: 380px;
+                }
+
+                &.section01 {
+                    .inner {
+                        .card_box {
+                            flex-wrap: wrap;
+
+                            .card {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+
+                &.section02 {
+                    .inner {
+                        max-width: 380px;
+                    }
+                }
+
+                &.section03 {
+                    ul {
+                        gap: 10px 22px;
+                        li {
+                            flex: 47%;
+                            max-width: 47%;
+                        }
+                    }
+                }
+
+                &.section04 {
+                    .inner {
+                        flex-wrap: wrap;
+                        .chart_box {
+                            width: 60%;
+                            height: 70%;
+                            .radio_box {
+                                @include scroll;
+                                label {
+                                    font-size: 1.2rem !important;
+                                }
+                            }
+                            .chart_view_box {
+                                li {
+                                    p {
+                                        font-size: 1.0rem !important;
+                                    }
+                                }
+                            }
+                        }
+                        .center_box {
+                            order: 3;
+                            flex-direction: row;
+                            height: 18%;
+                            width: 100%;
+                            margin-top: 20px;
+                            div {
+                                width: 45%;
+                                &:last-of-type {
+                                    &::before {
+                                        max-width: 60px;
+                                        bottom: 75px !important;
+                                    }
+                                }
+                            }
+                        }
+                        .down_box {
+                            order: 2;
+                            width: 35%;
+                            height: 70%;
+                            p {
+                                font-size: 2.4rem !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 모바일 세로 (해상도 ~ 479px)*/
+@media all and (max-width:479px) {
+    :root {
+        font-size: 42%;
+        line-height: 1.1;
+        word-break: keep-all;
+    }
+    .wrap {
+        .header {
+            .inner {
+                .logo {
+                    width: 120px;
+                    a {
+                        font-size: 2.0rem;
+                    }
+                }
+
+                nav {
+                    ul {
+                        li {
+                            a {
+                                font-size: 1.0rem !important;
+                                padding: 0 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .contents {
+            .main {
+                .txt {
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    .down {
+                        div {
+                            width: 200px;
+                        }
+                    }
+                }
+            }
+            section {
+                .inner {
+                    max-width: 300px;
+                    max-height: 450px;
+                }
+
+                &.section01 {
+                    .inner {
+                        .card_box {
+                            flex-wrap: wrap;
+
+                            .card {
+                                width: 46%;
+                                .img_box {
+                                    max-height: 80px;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.section02 {
+                    .inner {
+                        max-width: 300px;
+                    }
+                }
+
+                &.section03 {
+                    ul {
+                        gap: 10px 12px;
+                        li {
+                            flex: 47%;
+                            max-width: 47%;
+                        }
+                    }
+                }
+
+                &.section04 {
+                    .inner {
+                        flex-wrap: wrap;
+                        max-height: 400px;
+                        .chart_box {
+                            width: 60%;
+                            height: 70%;
+                            .radio_box {
+                                @include scroll;
+                                label {
+                                    font-size: 1.2rem !important;
+                                }
+                            }
+                            .chart_view_box {
+                                li {
+                                    p {
+                                        font-size: 1.0rem !important;
+                                    }
+                                }
+                            }
+                        }
+                        .center_box {
+                            order: 3;
+                            flex-direction: row;
+                            height: 18%;
+                            width: 100%;
+                            margin-top: 20px;
+                            div {
+                                width: 45%;
+                                &:last-of-type {
+                                    &::before {
+                                        max-width: 60px;
+                                        bottom: 75px !important;
+                                    }
+                                }
+                            }
+                        }
+                        .down_box {
+                            order: 2;
+                            width: 35%;
+                            height: 70%;
+                            p {
+                                font-size: 2.4rem !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
