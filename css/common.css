@@ -206,6 +206,8 @@ em {
 
 :root {
   --vh: 100%;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 body {
@@ -214,6 +216,8 @@ body {
 
 .wrap {
   height: calc(var(--vh, 1vh) * 100);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   overflow: hidden;
 }
 .wrap .fp_page_wrap {
